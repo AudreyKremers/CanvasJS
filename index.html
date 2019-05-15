@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CanvasJS</title>
+  </head>
+  <body>
+    <canvas id="monCanvas" width="900px" height="600px" style="border: 2px solid black;">Votre navigateur ne supporte pas Canvas... Mais bonne nouvelle : vous pouvez essayer avec un autre navigateur</canvas>
+
+    <canvas id="monCanvas1" width="900px" height="600px" style="border: 2px solid black;">Votre navigateur ne supporte pas Canvas... Mais bonne nouvelle : vous pouvez essayer avec un autre navigateur</canvas>
+
+    <script>
+      var c = document.getElementById("monCanvas");
+      var ctx = c.getContext("2d");
+
+      ctx.fillStyle = "rgb(16,191,8)";
+      ctx.fillRect(50,50,800,500,);
+
+
+      ctx.beginPath();
+      ctx.moveTo(100,300);
+      ctx.lineTo(450,100);
+      ctx.lineTo(800,300);
+      ctx.lineTo(450,500);
+//pas obligé de fermer la forme car closePath ou closeShape réunit les derniers points de coordonnées.
+      ctx.closePath();
+      ctx.fillStyle = "rgb(255,216,30)";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(450,300,133,0,Math.PI*2,true);
+      ctx.fillStyle = "rgb(22,0,158)";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(331,240);
+      ctx.bezierCurveTo(420,250,500,250,583,300);
+      ctx.lineTo(583,312);
+      ctx.bezierCurveTo(500,262,420,262,326,252);
+      ctx.closePath();
+      ctx.fillStyle="rgb(255,255,255)";
+      ctx.fill();
+
+/*étoile en contour :s !
+      ctx.beginPath();
+      ctx.moveTo(400,350);
+      ctx.lineTo(412,350);
+      ctx.lineTo(418,338);
+      ctx.lineTo(424,350);
+      ctx.lineTo(436,350);
+      ctx.lineTo(430,362);
+      //...
+      ctx.closePath();
+      ctx.strokeStyle="rgb(255,255,255)";
+      ctx.stroke();*/
+
+//étoile par combinaison de triangles
+      ctx.beginPath();
+      ctx.moveTo(400,300);
+      ctx.lineTo(420,300);
+      ctx.lineTo(410,320);
+      ctx.closePath();
+      ctx.fillStyle="rgb(255,255,255)";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(400,313);
+      ctx.lineTo(410,293);
+      ctx.lineTo(420,313);
+      ctx.closePath();
+      ctx.fillStyle="rgb(255,255,255)";
+      ctx.fill();
+//autre étoile par 2*triangles
+      ctx.beginPath();
+      ctx.moveTo(460,360);
+      ctx.lineTo(466,360);
+      ctx.lineTo(463,366);
+      ctx.closePath();
+      ctx.fillStyle="rgb(255,255,255)";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(460,364);
+      ctx.lineTo(463,358);
+      ctx.lineTo(466,364);
+      ctx.closePath();
+      ctx.fillStyle="rgb(255,255,255)";
+      ctx.fill();
+//encore une dernière étoile !
+      ctx.beginPath();
+      ctx.moveTo(360,350);
+      ctx.lineTo(368,350);
+      ctx.lineTo(364,358);
+      ctx.closePath();
+      ctx.fillStyle="rgb(255,255,255)";
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(360,355);
+      ctx.lineTo(364,347);
+      ctx.lineTo(368,355);
+      ctx.closePath();
+      ctx.fillStyle="rgb(255,255,255)";
+      ctx.fill();
+
+      var c = document.getElementById("monCanvas1");
+      var ctx = c.getContext("2d");
+
+      ctx.fillStyle = "rgb(14,24,46)";
+      ctx.fillRect(30,30,820,475);
+
+      ctx.fillStyle = "rgb(14,24,46)";
+      ctx.fillRect(30,510,820,18);
+
+      ctx.fillStyle = "rgb(14,24,46)";
+      ctx.fillRect(30,537,820,14);
+
+      ctx.fillStyle = "rgb(14,24,46)";
+      ctx.fillRect(30,558,820,10);
+
+      ctx.fillStyle = "rgb(14,24,46)";
+      ctx.fillRect(30,574,820,6);
+
+      ctx.fillStyle = "rgb(14,24,46)";
+      ctx.fillRect(30,585,820,4);
+
+      ctx.fillStyle = "rgb(14,24,46)";
+      ctx.fillRect(30,593,820,2);
+
+      ctx.fillStyle = "rgb(14,24,46)";
+      ctx.fillRect(30,598,820,1);
+ 
+//triangle M1
+      ctx.beginPath();
+      ctx.moveTo(450,50);
+      ctx.lineTo(250,250);
+      ctx.lineTo(450,300);
+      ctx.closePath();
+      ctx.fillStyle="rgb(55,94,87)";
+      ctx.fill();
+
+//triangle M2
+      ctx.beginPath();
+      ctx.moveTo(450,50);
+      ctx.lineTo(650,250);
+      ctx.lineTo(450,300);
+      ctx.closePath();
+      ctx.fillStyle="rgb(67,115,106)";
+      ctx.fill();
+
+//triangle -F
+      ctx.beginPath();
+      ctx.moveTo(450,450);
+      ctx.lineTo(200,400);
+      ctx.lineTo(450,300);
+      ctx.closePath();
+      ctx.fillStyle="rgb(46,79,73)";
+      ctx.fill();
+
+//triangle -C
+      ctx.beginPath();
+      ctx.moveTo(450,450);
+      ctx.lineTo(700,400);
+      ctx.lineTo(450,300);
+      ctx.closePath();
+      ctx.fillStyle="rgb(128,150,143)";
+      ctx.fill();
+
+//triangle +F
+      ctx.beginPath();
+      ctx.moveTo(450,300);
+      ctx.lineTo(200,400);
+      ctx.lineTo(150,225);
+      ctx.closePath();
+      ctx.fillStyle="rgb(39,66,61)";
+      ctx.fill();
+
+//triangles ++C
+      ctx.beginPath();
+      ctx.moveTo(450,300);
+      ctx.lineTo(700,400);
+      ctx.lineTo(750,225);
+      ctx.closePath();
+      ctx.fillStyle="rgb(137,161,153)";
+      ctx.fill();
+
+//triangle -M
+      ctx.beginPath();
+      ctx.moveTo(250,250);
+      ctx.lineTo(150,225);
+      ctx.lineTo(300,200);
+      ctx.closePath();
+      ctx.fillStyle="rgb(85,120,116)";
+      ctx.fill();
+
+//triangle +C
+      ctx.beginPath();
+      ctx.moveTo(650,250);
+      ctx.lineTo(750,225);
+      ctx.lineTo(600,200);
+      ctx.closePath();
+      ctx.fillStyle="rgb(97,130,125)";
+      ctx.fill();
+
+//planete 1/2
+      ctx.beginPath();
+      ctx.arc(450,600,150,0,Math.PI*1,true);
+      ctx.fillStyle = "rgb(51,105,163)";
+      ctx.fill();
+
+//terre1
+      ctx.beginPath();
+      ctx.moveTo(601,600);
+      ctx.lineTo(575,575);
+      ctx.lineTo(595,552);
+      ctx.closePath();
+      ctx.fillStyle="rgb(135,105,58)";
+      ctx.fill();
+
+//terre2
+      ctx.beginPath();
+      ctx.moveTo(575,575);
+      ctx.lineTo(560,550);
+      ctx.lineTo(595,552);
+      ctx.closePath();
+      ctx.fillStyle="rgb(122,129,61)";
+      ctx.fill();
+
+//terre3
+      ctx.beginPath();
+      ctx.moveTo(595,552);
+      ctx.lineTo(552,525);
+      ctx.lineTo(579,525);
+      ctx.closePath();
+      ctx.fillStyle="rgb(121,150,63)";
+      ctx.fill();
+
+//terre4
+      ctx.beginPath();
+      ctx.moveTo(552,550);
+      ctx.lineTo(552,525);
+      ctx.lineTo(596,552);
+      ctx.closePath();
+      ctx.fillStyle="rgb(122,140,61)";
+      ctx.fill();
+
+//terre5
+      ctx.beginPath();
+      ctx.moveTo(555,550);
+      ctx.lineTo(552,525);
+      ctx.lineTo(535,550);
+      ctx.closePath();
+      ctx.fillStyle="rgb(135,119,57)";
+      ctx.fill();
+
+
+//terre6
+      ctx.beginPath();
+      ctx.moveTo(540,505);
+      ctx.lineTo(540,480);
+      ctx.lineTo(562,500);
+      ctx.closePath();
+      ctx.fillStyle="rgb(70,162,65)";
+      ctx.fill();
+
+//terre7
+      ctx.beginPath();
+      ctx.moveTo(550,510);
+      ctx.lineTo(540,525);
+      ctx.lineTo(530,500);
+      ctx.closePath();
+      ctx.fillStyle="rgb(90,130,48)";
+      ctx.fill();
+
+//terre8
+      ctx.beginPath();
+      ctx.moveTo(440,450);
+      ctx.lineTo(421,452);
+      ctx.lineTo(437,473);
+      ctx.closePath();
+      ctx.fillStyle="rgb(162,192,235)";
+      ctx.fill();
+
+//terre9
+      ctx.beginPath();
+      ctx.moveTo(421,452);
+      ctx.lineTo(400,458);
+      ctx.lineTo(400,475);
+      ctx.closePath();
+      ctx.fillStyle="rgb(162,192,235)";
+      ctx.fill();
+
+//terre10
+      ctx.beginPath();
+      ctx.moveTo(400,457);
+      ctx.lineTo(360,478);
+      ctx.lineTo(400,500);
+      ctx.closePath();
+      ctx.fillStyle="rgb(162,215,208)";
+      ctx.fill();
+
+//terre11
+      ctx.beginPath();
+      ctx.moveTo(400,500);
+      ctx.lineTo(425,500);
+      ctx.lineTo(412,488);
+      ctx.closePath();
+      ctx.fillStyle="rgb(162,215,208)";
+      ctx.fill();
+
+//terre12
+      ctx.beginPath();
+      ctx.moveTo(400,500);
+      ctx.lineTo(440,500);
+      ctx.lineTo(408,540);
+      ctx.closePath();
+      ctx.fillStyle="rgb(87,130,114)";
+      ctx.fill();
+
+//terre13
+      ctx.beginPath();
+      ctx.moveTo(400,500);
+      ctx.lineTo(360,478);
+      ctx.lineTo(408,540);
+      ctx.closePath();
+      ctx.fillStyle="rgb(112,141,98)";
+      ctx.fill();
+
+//terre14
+      ctx.beginPath();
+      ctx.moveTo(360,478);
+      ctx.lineTo(340,550);
+      ctx.lineTo(408,540);
+      ctx.closePath();
+      ctx.fillStyle="rgb(115,143,76)";
+      ctx.fill();
+
+//terre15
+      ctx.beginPath();
+      ctx.moveTo(340,550);
+      ctx.lineTo(370,545);
+      ctx.lineTo(360,568);
+      ctx.closePath();
+      ctx.fillStyle="rgb(83,165,56)";
+      ctx.fill();
+
+//terre16
+      ctx.beginPath();
+      ctx.moveTo(360,568);
+      ctx.lineTo(380,569);
+      ctx.lineTo(380,580);
+      ctx.closePath();
+      ctx.fillStyle="rgb(83,165,56)";
+      ctx.fill();
+
+//terre17
+      ctx.beginPath();
+      ctx.moveTo(372,600);
+      ctx.lineTo(400,600);
+      ctx.lineTo(375,585);
+      ctx.closePath();
+      ctx.fillStyle="rgb(115,143,76)";
+      ctx.fill();
+
+//terre18
+ctx.beginPath();
+ctx.moveTo(375,585);
+ctx.lineTo(400,600);
+ctx.lineTo(405,575);
+ctx.closePath();
+ctx.fillStyle="rgb(64,134,53)";
+ctx.fill();
+
+//terre19
+
+ctx.beginPath();
+ctx.moveTo(400,600);
+ctx.lineTo(405,575);
+ctx.lineTo(450,600);
+ctx.closePath();
+ctx.fillStyle="rgb(41,95,34)";
+ctx.fill();
+
+//terre20
+
+//terre21
+
+//terre22
+
+//terre23
+
+//terre24
+
+//terre25
+
+//terre26
+
+//terre27
+
+//terre28
+
+//terre29
+
+    </script>
+  </body>
+</html>
